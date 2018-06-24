@@ -1,5 +1,6 @@
 # : comments
 
 # configfile
+.gitignore
 ecomx01/settings.py
 db.sqlite3
