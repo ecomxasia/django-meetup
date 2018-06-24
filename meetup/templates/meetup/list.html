@@ -1,0 +1,9 @@
+{% if latest_apply_list %}
+    <ul>
+    {% for apply in latest_apply_list %}
+        <li><a href="{% url 'meetup:detail' apply.id %}">{{ apply.user_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ApplyUser are available.</p>
+{% endif %}

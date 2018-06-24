@@ -1,0 +1,12 @@
+<h1>Meetup 참가신청</h1>
+<form action="{% url 'meetup:save' %}" method="post">
+{% csrf_token %}
+<input type="text" name="user_name" id="user_name"></input>
+<input type="text" name="company" id="company"></input>
+<input type="text" name="email_address" id="email_address"></input>
+<input type="text" name="mobile" id="mobile"></input>
+<input type="text" name="question" id="question"></input>
+<input type="submit" value"apply"></input>
+</form>
+
+
