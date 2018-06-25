@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'meetup/style.css' %}" />
+{% include "meetup/menu.html" %}
 {% if latest_apply_list %}
     <ul>
     {% for apply in latest_apply_list %}

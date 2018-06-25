@@ -2,10 +2,22 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Question, Choice, ApplyUser
+from .models import ApplyUser
 
-admin.site.register(ApplyUser)
-admin.site.register(Question)
-admin.site.register(Choice)
+class ApplyUserAdmin(admin.ModelAdmin):
+  fieldsets = [
+    (None, {'fields': ['user_name']}), 
+    (None, {'fields': ['company']}), 
+    (None, {'fields': ['email_address']}), 
+    (None, {'fields': ['mobile']}), 
+    (None, {'fields': ['question']}), 
+    ('Date information', {'fields': ['apply_date']}), 
+  ]
+
+  list_display = ( 'user_name', 'company', 'email_address', 'mobile', 'was_applied_recently' )
+  list_filter = [ 'apply_date' ]
+  search_fields = ['user_name', 'company', 'email_address', 'mobile' ]
+
+admin.site.register(ApplyUser, ApplyUserAdmin)
 
 

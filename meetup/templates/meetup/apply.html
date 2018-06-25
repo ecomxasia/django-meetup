@@ -1,3 +1,4 @@
+{% include "meetup/menu.html" %}
 <h1>Meetup 참가신청</h1>
 <form action="{% url 'meetup:save' %}" method="post">
 {% csrf_token %}

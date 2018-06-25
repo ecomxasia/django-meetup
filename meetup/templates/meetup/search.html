@@ -1,0 +1,9 @@
+{% include "meetup/menu.html" %}
+<h1>Meetup 참가확인</h1>
+<form action="{% url 'meetup:sact' %}" method="post">
+{% csrf_token %}
+모바일 : <input type="text" name="mobile" id="mobile"></input>
+<input type="submit" value"searchact"></input>
+</form>
+
+
