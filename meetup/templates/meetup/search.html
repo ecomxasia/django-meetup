@@ -1,9 +1,19 @@
+{% include "meetup/header.html" %}
 {% include "meetup/menu.html" %}
-<h1>Meetup 참가확인</h1>
-<form action="{% url 'meetup:sact' %}" method="post">
-{% csrf_token %}
-모바일 : <input type="text" name="mobile" id="mobile"></input>
-<input type="submit" value"searchact"></input>
-</form>
-
+<bodylang="ko">
+  <div class="col-md-12">
+    <h3 class="section-title">참가자 검색</h3>
+  </div>
+                
+  <form method="POST" action="{% url 'meetup:sact' %}">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group"> <input type="text" class="form-control" placeholder="Phone" id="mobile" name="mobile" required> </div>
+    </div>
+  </div>
+  <div class="text-center mt20"> <button type="submit" value="sact"  class="btn btn-black" id="registration-submit-btn">검색</button> </div>
+  </form>
+</body>
+</html>
 

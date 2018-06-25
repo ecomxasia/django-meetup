@@ -1,12 +1,9 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'meetup/style.css' %}" />
+{% include "meetup/header.html" %}
 {% include "meetup/menu.html" %}
 {% if latest_apply_list %}
-    <ul>
-    {% for apply in latest_apply_list %}
-        <li><a href="{% url 'meetup:detail' apply.id %}">{{ apply.user_name }}</a></li>
-    {% endfor %}
-    </ul>
+  {% for apply in latest_apply_list %}
+    <h3 class="section-heading text-white"><a href="{% url 'meetup:detail' apply.id %}">{{ apply.user_name }}</a></h3>
+  {% endfor %}
 {% else %}
     <p>No ApplyUser are available.</p>
 {% endif %}

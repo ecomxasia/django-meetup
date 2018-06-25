@@ -1,13 +1,34 @@
+{% include "meetup/header.html" %}
 {% include "meetup/menu.html" %}
-<h1>Meetup 참가신청</h1>
-<form action="{% url 'meetup:save' %}" method="post">
-{% csrf_token %}
-<input type="text" name="user_name" id="user_name"></input>
-<input type="text" name="company" id="company"></input>
-<input type="text" name="email_address" id="email_address"></input>
-<input type="text" name="mobile" id="mobile"></input>
-<input type="text" name="question" id="question"></input>
-<input type="submit" value"apply"></input>
-</form>
 
+<bodylang="ko">
+  <div class="col-md-12">
+    <h3 class="section-title">Meetup Registration</h3>
+  </div>
+                
+  <form method="POST" action="{% url 'meetup:save' %}">
+{% csrf_token %}
+  <div class="row">
+    <div class="col-md-12" id="registration-msg" style="display:none;">
+      <div class="alert"></div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group"> <input type="text" class="form-control" placeholder="Name" id="user_name" name="user_name" required> </div>
+      <div class="form-group"> <input type="email" class="form-control" placeholder="Email" id="email_address" name="email_address" required> </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group"> <input type="text" class="form-control" placeholder="Company" id="company" name="company" required> </div>
+      <div class="form-group"> <input type="text" class="form-control" placeholder="Phone" id="mobile" name="mobile" required> </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group"> <input type="text" class="form-control" placeholder="question" id="question" name="question" required> </div>
+    </div>
+
+  </div>
+  <div class="text-center mt20"> <button type="submit" value="apply"  class="btn btn-black" id="registration-submit-btn">Submit</button> </div>
+  </form>
+</body>
+</html>
 
